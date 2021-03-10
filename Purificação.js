@@ -1,15 +1,15 @@
 function solucao(stringCorrompida) {
-    const corrompido = "!@#$%&*()";
-    let erro = 0;
+    const caracteres_proibidos = "!@#$%&*()";
+    let erro = false;
     let purificado = "";
 	for (let i = 0; i < stringCorrompida.length; i++) {
         erro = 0;
-        for(let j = 0; j < corrompido.length; j ++) {
-            if(stringCorrompida[i] === corrompido[j]) {
-                erro = 1;
+        for(let j = 0; j < caracteres_proibidos.length; j ++) {
+            if(stringCorrompida[i] === caracteres_proibidos[j]) {
+                erro = true;
             }
         }
-        if(erro === 0) {
+        if(erro === false) {
             purificado += stringCorrompida[i];
         }
     }
